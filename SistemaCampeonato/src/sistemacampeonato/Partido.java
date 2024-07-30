@@ -17,8 +17,11 @@ public class Partido {
     private String resultado;
 
     // Constructor
-    
-
+    public Partido(Equipo equipo1, Equipo equipo2, Date fecha) {
+        this.equipo1 = equipo1;
+        this.equipo2 = equipo2;
+        this.fecha = fecha;
+    }
     // Getters y setters
     public Equipo getEquipo1() {
         return equipo1;
