@@ -54,6 +54,7 @@ public class Torneo {
         System.out.println("Tabla de posiciones:");
         for (Equipo equipo : equipos) {
             System.out.println(equipo.getNombre() + ": " + equipo.getPuntos() + " puntos");
+        
         }
     }
 }
