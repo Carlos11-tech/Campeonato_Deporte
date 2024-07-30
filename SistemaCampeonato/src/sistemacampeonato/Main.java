@@ -85,8 +85,6 @@ public class Main {
                 torneo2.actualizarResultado(partido, resultado);
             }
         }
-
-        // Mostrar tabla de posiciones para el segundo torneo
         torneo2.mostrarTablaDePosiciones();
 
         scanner.close();
