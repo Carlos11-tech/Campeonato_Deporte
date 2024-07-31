@@ -13,42 +13,71 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        // Crear la instancia de la implementación de TipoDeporte
+        TipoDeporte tipoFutbol = new Futbol();
+
         // Crear instancias de las clases
         Deporte deporteFutbol = new Deporte();
         deporteFutbol.setNombre("Fútbol");
-        deporteFutbol.setTipo(TipoDeporte.FUTBOL);
+        deporteFutbol.setTipo(tipoFutbol);
 
         // Crear equipos para el primer torneo
-        Equipo equipo1Torneo1 = new Equipo("Equipo 1", "Torneo1-Equipo1");
-        equipo1Torneo1.addMiembro(new Jugador("Jugador A"));
-        equipo1Torneo1.addMiembro(new Jugador("Jugador B"));
+        Equipo barcelonaTorneo1 = new Equipo("Barcelona", "Torneo1-Barcelona");
+        barcelonaTorneo1.addMiembro(new Jugador("Jugador A"));
+        barcelonaTorneo1.addMiembro(new Jugador("Jugador B"));
 
-        Equipo equipo2Torneo1 = new Equipo("Equipo 2", "Torneo1-Equipo2");
-        equipo2Torneo1.addMiembro(new Jugador("Jugador C"));
-        equipo2Torneo1.addMiembro(new Jugador("Jugador D"));
+        Equipo realMadridTorneo1 = new Equipo("Real Madrid", "Torneo1-RealMadrid");
+        realMadridTorneo1.addMiembro(new Jugador("Jugador C"));
+        realMadridTorneo1.addMiembro(new Jugador("Jugador D"));
+
+        Equipo liverpoolTorneo1 = new Equipo("Liverpool", "Torneo1-Liverpool");
+        liverpoolTorneo1.addMiembro(new Jugador("Jugador E"));
+        liverpoolTorneo1.addMiembro(new Jugador("Jugador F"));
+
+        Equipo psgTorneo1 = new Equipo("PSG", "Torneo1-PSG");
+        psgTorneo1.addMiembro(new Jugador("Jugador G"));
+        psgTorneo1.addMiembro(new Jugador("Jugador H"));
 
         // Crear equipos para el segundo torneo (mismo nombre, diferentes jugadores)
-        Equipo equipo1Torneo2 = new Equipo("Equipo 1", "Torneo2-Equipo1");
-        equipo1Torneo2.addMiembro(new Jugador("Jugador E"));
-        equipo1Torneo2.addMiembro(new Jugador("Jugador F"));
+        Equipo barcelonaTorneo2 = new Equipo("Barcelona", "Torneo2-Barcelona");
+        barcelonaTorneo2.addMiembro(new Jugador("Jugador I"));
+        barcelonaTorneo2.addMiembro(new Jugador("Jugador J"));
 
-        Equipo equipo3Torneo2 = new Equipo("Equipo 3", "Torneo2-Equipo3");
-        equipo3Torneo2.addMiembro(new Jugador("Jugador G"));
-        equipo3Torneo2.addMiembro(new Jugador("Jugador H"));
+        Equipo manchesterCityTorneo2 = new Equipo("Manchester City", "Torneo2-ManchesterCity");
+        manchesterCityTorneo2.addMiembro(new Jugador("Jugador K"));
+        manchesterCityTorneo2.addMiembro(new Jugador("Jugador L"));
+
+        Equipo chelseaTorneo2 = new Equipo("Chelsea", "Torneo2-Chelsea");
+        chelseaTorneo2.addMiembro(new Jugador("Jugador M"));
+        chelseaTorneo2.addMiembro(new Jugador("Jugador N"));
+
+        Equipo juventusTorneo2 = new Equipo("Juventus", "Torneo2-Juventus");
+        juventusTorneo2.addMiembro(new Jugador("Jugador O"));
+        juventusTorneo2.addMiembro(new Jugador("Jugador P"));
 
         // Crear el primer torneo
         Torneo torneo1 = new Torneo();
-        torneo1.setNombre("Torneo 1");
+        torneo1.setNombre("Champions League - Grupo A");
         torneo1.setDeporte(deporteFutbol);
-        torneo1.addEquipo(equipo1Torneo1);
-        torneo1.addEquipo(equipo2Torneo1);
+        torneo1.addEquipo(barcelonaTorneo1);
+        torneo1.addEquipo(realMadridTorneo1);
+        torneo1.addEquipo(liverpoolTorneo1);
+        torneo1.addEquipo(psgTorneo1);
 
         // Crear el segundo torneo
         Torneo torneo2 = new Torneo();
-        torneo2.setNombre("Torneo 2");
+        torneo2.setNombre("Champions League - Grupo B");
         torneo2.setDeporte(deporteFutbol);
-        torneo2.addEquipo(equipo1Torneo2);
-        torneo2.addEquipo(equipo3Torneo2);
+        torneo2.addEquipo(barcelonaTorneo2);
+        torneo2.addEquipo(manchesterCityTorneo2);
+        torneo2.addEquipo(chelseaTorneo2);
+        torneo2.addEquipo(juventusTorneo2);
+
+        // Crear la liga mayor
+        Liga liga = new Liga();
+        liga.setNombre("Champions League");
+        liga.addTorneo(torneo1);
+        liga.addTorneo(torneo2);
 
         // Simulación de partidos para el primer torneo
         Scanner scanner = new Scanner(System.in);
@@ -67,9 +96,6 @@ public class Main {
             }
         }
 
-        // Mostrar tabla de posiciones para el primer torneo
-        torneo1.mostrarTablaDePosiciones();
-
         // Simulación de partidos para el segundo torneo
         for (int i = 0; i < torneo2.equipos.size(); i++) {
             for (int j = i + 1; j < torneo2.equipos.size(); j++) {
@@ -85,11 +111,17 @@ public class Main {
                 torneo2.actualizarResultado(partido, resultado);
             }
         }
-        torneo2.mostrarTablaDePosiciones();
+
+        // Mostrar tabla de posiciones para ambos torneos
+        liga.mostrarTorneos();
 
         scanner.close();
     }
 }
+
+
+
+
 
 
 

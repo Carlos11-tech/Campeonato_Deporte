@@ -8,18 +8,11 @@ package sistemacampeonato;
  *
  * @author USER
  */
-class Jugador {
-    private String nombre;
-
-    public Jugador(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getNombre() {
-        return nombre;
+class Futbol implements TipoDeporte {
+    @Override
+    public String getTipo() {
+        return "Fútbol";
     }
 }
-
-
 
 

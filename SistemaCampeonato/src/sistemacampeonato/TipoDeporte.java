@@ -8,9 +8,9 @@ package sistemacampeonato;
  *
  * @author USER
  */
-public interface TipoDeporte {
-    String FUTBOL = "Fútbol";
-    String BASKETBALL = "Basketball";
-    String TENIS = "Tenis";
+interface TipoDeporte {
+    String getTipo();
 }
+
+
 

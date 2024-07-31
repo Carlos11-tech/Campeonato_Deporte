@@ -8,24 +8,24 @@ package sistemacampeonato;
  *
  * @author USER
  */
-public class Deporte {
+class Deporte {
     private String nombre;
-    private String tipo;
-
-    // Getters y setters
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
+    private TipoDeporte tipo;
 
     public String getNombre() {
         return nombre;
     }
 
-    public String getTipo() {
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public TipoDeporte getTipo() {
         return tipo;
     }
+
+    public void setTipo(TipoDeporte tipo) {
+        this.tipo = tipo;
+    }
 }
+

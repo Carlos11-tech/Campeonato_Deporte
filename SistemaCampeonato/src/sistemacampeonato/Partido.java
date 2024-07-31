@@ -10,36 +10,23 @@ package sistemacampeonato;
  */
 import java.util.Date;
 
-public class Partido {
-    private Equipo equipo1;
-    private Equipo equipo2;
-    private Date fecha;
-    private String resultado;
+class Partido {
+    Equipo equipo1;
+    Equipo equipo2;
+    Date fecha;
+    String resultado;
 
-    // Constructor
     public Partido(Equipo equipo1, Equipo equipo2, Date fecha) {
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;
         this.fecha = fecha;
     }
-    // Getters y setters
-    public Equipo getEquipo1() {
-        return equipo1;
-    }
 
-    public Equipo getEquipo2() {
-        return equipo2;
-    }
-
-    public Date getFecha() {
-        return fecha;
+    public void setResultado(String resultado) {
+        this.resultado = resultado;
     }
 
     public String getResultado() {
         return resultado;
-    }
-
-    public void setResultado(String resultado) {
-        this.resultado = resultado;
     }
 }
