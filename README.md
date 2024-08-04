@@ -7,5 +7,5 @@ Basado en el diagrama de clases se puede comprobar y codificar los siguientes re
 -Ingresar dos campeonatos donde este el mismo equipo con diferentes jugadores
 
 -Llevar la tabla de posiciones
-![Captura de pantalla 2024-07-30 193345](https://github.com/user-attachments/assets/45acfad8-ba60-4189-8c23-7439868d188b)
+![image](https://github.com/user-attachments/assets/c8686d77-6849-42bd-976d-3aa57dea3b44)
 
